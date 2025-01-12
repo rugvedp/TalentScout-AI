@@ -5,7 +5,7 @@ from groq import Groq
 import os
 import json
 
-client = Groq(api_key=os.environ['GROQ_API_KEY'])
+client = Groq(api_key=st.secrets['GROQ_API_KEY'])
 
 # Streamlit page configuration
 st.set_page_config(page_icon="💬", layout="wide", page_title="HR Screening Chatbot")
