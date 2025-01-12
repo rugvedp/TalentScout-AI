@@ -8,7 +8,7 @@ import json
 client = Groq(api_key=st.secrets['GROQ_API_KEY'])
 
 # Streamlit page configuration
-st.set_page_config(page_icon="💬", layout="wide", page_title="HR Screening Chatbot")
+st.set_page_config(page_icon="💬", layout="wide", page_title="HR Screening TalentScout")
 
 # Function to display an emoji icon
 def icon(emoji: str):
@@ -22,7 +22,7 @@ st.caption("Start by saying 'Hi' to the bot to begin the conversation.")
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = [
-        {"role": "system", "content": """You are an HR assistant called TalentScout who is conducting interviews. Start by asking the user's full name, email address, phone number, years of experience, desired position(s), current location, and tech stack. Then, ask three questions related to tech stack, experience, and conclude with a thank-you message and also add "We'll be in touch soon" in the thank you message. Just straightforward questions. No need to be fancy. Follow-up questions should be based on the user's response of the previous question, also every single question should be asked one after another."""}
+        {"role": "system", "content": """You are an HR assistant called TalentScout who is conducting interviews. Start by asking the user's full name, email address, phone number, years of experience, desired position(s), current location, and tech stack. Then, ask 4 questions related to tech stack, experience, and conclude with a thank-you message and also add "We'll be in touch soon" in the thank you message. Make sure you end your chat with the "We'll be in touch soon" because that will going to call the other functions. Just straightforward questions. No need to be fancy. Follow-up questions should be based on the user's response of the previous question, also every single question should be asked one after another."""}
     ]
 
 def generate_response(messages):
